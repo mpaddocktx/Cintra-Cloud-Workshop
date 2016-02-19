@@ -1,13 +1,14 @@
-1. Download the zip file:
-wget https://github.com/mpaddocktx/Cintra-Cloud-Workshop/archive/master.zip
+1. Download the zip file before creating the Cloud instance.
+https://github.com/mpaddocktx/Cintra-Cloud-Workshop/archive/master.zip
 	- Putty
 	- Keys
 	- Cloudberry
 	- Notes
 	
+2. Once the database server is up and running download the PDB datafiles while on the server command line.
 wget https://www.dropbox.com/s/j8uq1h4bpg6r5da/orcl.zip
 
-2. Unzip the datafiles into an empty directory - /u02/app/oracle/oradata/CDB1/orcl
+2. Unzip the datafiles into an empty directory - e.g. /u02/app/oracle/oradata/CDB1/orcl
 
 3. Move the orcl.xml file into the $ORACLE_HOME/dbs
 
