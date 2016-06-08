@@ -3,7 +3,6 @@ https://github.com/mpaddocktx/Cintra-Cloud-Workshop/archive/master.zip
 	- Putty
 	- Keys
 	- Cloudberry
-	- Notes
 	
 2. Once the database server is up and running download the PDB datafiles while on the server command line.
 wget https://www.dropbox.com/s/j8uq1h4bpg6r5da/orcl.zip
