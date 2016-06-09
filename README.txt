@@ -1,3 +1,5 @@
+the key passphrase is Cintra21
+
 1. Once the database server is up and running download the PDB datafiles while on the server command line.
 wget https://www.dropbox.com/s/12jd18cpnpxoos8/pdb1.zip?dl=0
 
