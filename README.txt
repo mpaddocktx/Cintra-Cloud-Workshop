@@ -32,6 +32,23 @@ TEMPFILE REUSE;
 6. Open the pluggable database
 alter pluggable database test open;  
 
-7. Check the status of the PDB
+7. Change the wallet from auto-login to password type.
+    a. Find the SSO file location using:
+    select * from v$encryption_wallet;
+    b. Remove the file cwallet.ssh from the location above.
+    c. Close the wallet using:
+    administer key management set keystore close;
+    d. Re-open the wallet using:
+    administer key management set keystore open identified by "Welcome1#";
+    e. Verify that the wallet type is now "PASSWORD" using:
+    select * from v$encryption_wallet;
+    
+8. Import the included encryption key into the PDB:
+ALTER SESSION SET CONTAINER=TEST;
+ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY "Welcome1#"; 
+ADMINISTER KEY MANAGEMENT IMPORT KEYS WITH SECRET "Welcome1#" 
+FROM '/u01/app/oracle/admin/ORCL/tde_wallet/pdb1.exp' IDENTIFIED BY "Welcome1#" WITH BACKUP;
+
+9. Check the status of the PDB
 select pdb_name, status from CDB_PDBS;  
 select name, open_mode from V$PDBS;    
