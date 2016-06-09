@@ -1,4 +1,5 @@
 The ssh key passphrase is Cintra21
+Once logged into the database server as the user "opc", you must change to the "oracle" user for all database tasks using "sudo su - oracle".
 
 1. Once the database server is up and running download the PDB datafiles while on the server command line.
 wget https://www.dropbox.com/s/12jd18cpnpxoos8/pdb1.zip?dl=0
