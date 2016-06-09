@@ -1,4 +1,4 @@
-The key passphrase is Cintra21
+The ssh key passphrase is Cintra21
 
 1. Once the database server is up and running download the PDB datafiles while on the server command line.
 wget https://www.dropbox.com/s/12jd18cpnpxoos8/pdb1.zip?dl=0
@@ -35,11 +35,15 @@ alter pluggable database test open;
 7. Change the wallet from auto-login to password type.
     a. Find the SSO file location using:
     select * from v$encryption_wallet;
-    b. Remove the file cwallet.ssh from the location above.
+    
+    b. Remove the file cwallet.sso from the location above.
+    
     c. Close the wallet using:
     administer key management set keystore close;
+    
     d. Re-open the wallet using:
     administer key management set keystore open identified by "Welcome1#";
+    
     e. Verify that the wallet type is now "PASSWORD" using:
     select * from v$encryption_wallet;
     
